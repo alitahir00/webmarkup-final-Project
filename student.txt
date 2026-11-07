@@ -1,5 +1,5 @@
 Student name: Ali Tahir
 Student number: 746689
 Student class: ITA1
-GitHub Repository: your github repository URL
+GitHub Repository: https://github.com/alitahir00/webmarkup-final-Project
 GitHub Pages URL: your github pages URL
