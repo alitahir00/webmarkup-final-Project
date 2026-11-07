@@ -1,0 +1,1265 @@
+/* StudySpot Haarlem - one stylesheet for all pages */
+
+:root {
+	/* fonts */
+	--font-heading: "Plus Jakarta Sans", Arial, sans-serif;
+	--font-body: "Plus Jakarta Sans", Arial, sans-serif;
+	--font-display: "Plus Jakarta Sans", Arial, sans-serif;
+
+	/* colors */
+	--navy: #1e3a8a;
+	--text: #1e293b;
+	--muted: #64748b;
+	--orange: #f59e0b;
+	--red: #dc2626;
+	--bg: #fafbfd;
+	--bg-section: #f8fafc;
+	--bg-steps: #f1f5fb;
+	--bg-footer: #f4f7fb;
+	--icon-bg: #eef2fb;
+	--nav-active: #eef2f8;
+	--line: #e8ecf2;
+
+	/* layout */
+	--container: 80rem;
+	--gutter: 1.5rem;
+	--side: max(1.5rem, calc((100% - var(--container)) / 2));
+	--space: 5rem;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	margin: 0;
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	line-height: 1.6;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	word-spacing: 0.05em;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 0.0625rem;
+	height: 0.0625rem;
+	margin: -0.0625rem;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}
+
+/* header and menu */
+header {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1.05rem var(--side);
+	background-color: var(--bg);
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0 0 0.0625rem 0;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--navy);
+	font-family: var(--font-display);
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+}
+
+.logo:link,
+.logo:visited {
+	color: var(--navy);
+}
+
+.logo-icon {
+	box-sizing: content-box;
+	padding: 0.55rem;
+	border-radius: 0.6rem;
+	background-color: var(--navy);
+}
+
+.menu-button {
+	display: none;
+	padding: 0.4rem;
+	border-radius: 0.6rem;
+	color: var(--navy);
+	cursor: pointer;
+}
+
+.menu-button svg {
+	display: block;
+}
+
+.menu-button:hover {
+	background-color: var(--nav-active);
+}
+
+.menu-toggle:focus + .menu-button {
+	outline: 0.125rem solid var(--orange);
+}
+
+nav > ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.2rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav a {
+	display: block;
+	padding: 0.5rem 1rem;
+	border-radius: 0.6rem;
+	color: var(--muted);
+	font-size: 1.1rem;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+nav a:link,
+nav a:visited {
+	color: var(--muted);
+}
+
+nav a:hover,
+nav a.active {
+	background-color: var(--nav-active);
+	color: var(--navy);
+}
+
+/* the 12 column grid, used by every section and the footer */
+.hero,
+.explore,
+.steps,
+.places,
+.guidance,
+.footer-top,
+.footer-bottom {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: var(--gutter);
+}
+
+h1 {
+	margin: 0 0 1.75rem 0;
+	color: var(--text);
+	font-family: var(--font-heading);
+	font-size: 3.9rem;
+	font-weight: 600;
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+}
+
+.eyebrow {
+	grid-column: 1 / -1;
+	margin: 0 0 -1.3rem 0;
+	color: var(--orange);
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
+figure {
+	margin: 0;
+	padding: 0.0625rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 1.1rem;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+figure img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 1rem;
+}
+
+/* home: hero */
+.hero {
+	align-items: center;
+	padding: var(--space) var(--side);
+	row-gap: 2.5rem;
+}
+
+.hero article {
+	grid-column: 1 / 7;
+	padding-right: 2rem;
+}
+
+.hero figure {
+	grid-column: 7 / 13;
+}
+
+.hero p {
+	max-width: 36rem;
+	margin: 0 0 2.5rem 0;
+	color: var(--muted);
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+.button {
+	display: inline-block;
+	padding: 0.9rem 1.85rem;
+	border-radius: 0.8rem;
+	background-color: var(--navy);
+	color: #ffffff;
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.button:link,
+.button:visited {
+	color: #ffffff;
+}
+
+.button:hover {
+	background-color: var(--text);
+}
+
+/* home: explore and steps */
+.explore,
+.steps {
+	padding: var(--space) var(--side);
+	row-gap: var(--gutter);
+}
+
+.explore {
+	background-color: var(--bg-section);
+}
+
+.steps {
+	background-color: var(--bg-steps);
+}
+
+.explore h2,
+.steps h2,
+.guidance h2 {
+	grid-column: 1 / -1;
+	margin: 0 0 1rem 0;
+	color: var(--text);
+	font-family: var(--font-heading);
+	font-size: 2.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+}
+
+/* cards (home page, then the small changes per page) */
+.card {
+	grid-column: span 4;
+	padding: 1.5rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+}
+
+.card h3 {
+	margin: 1.1rem 0 0.4rem 0;
+	color: var(--text);
+	font-family: var(--font-heading);
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.6;
+}
+
+.card p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 1rem;
+	line-height: 1.625;
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 0.6rem;
+	background-color: var(--icon-bg);
+	color: var(--navy);
+}
+
+.steps .card {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	column-gap: 0.75rem;
+	box-shadow: 0 0.25rem 1.25rem rgba(30, 58, 138, 0.06);
+}
+
+.steps .card h3,
+.steps .card p {
+	grid-column: 1 / -1;
+}
+
+.steps .card h3 {
+	margin-top: 0.95rem;
+}
+
+.step-number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 50%;
+	background-color: var(--navy);
+	color: #ffffff;
+	font-size: 0.875rem;
+	font-weight: 700;
+}
+
+.step-icon {
+	color: var(--orange);
+}
+
+/* inner pages: intro block */
+.places {
+	row-gap: var(--gutter);
+	padding: 4rem var(--side) var(--space) var(--side);
+}
+
+.places.facilities {
+	padding-bottom: 2rem;
+}
+
+.places.tips {
+	padding-bottom: 7rem;
+}
+
+.places.reviews {
+	padding-bottom: 3rem;
+}
+
+.places.about {
+	padding-bottom: 2.5rem;
+}
+
+.places h1 {
+	grid-column: 1 / -1;
+	margin: 0 0 -0.95rem 0;
+	font-size: 2.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+}
+
+.places .lead,
+.guidance .lead {
+	grid-column: 1 / -1;
+	margin: 0 0 1rem 0;
+	color: var(--muted);
+	font-size: 1.25rem;
+	line-height: 1.6;
+}
+
+.facilities .lead,
+.tips .lead {
+	max-width: 40rem;
+}
+
+.lead::first-letter {
+	color: var(--navy);
+	font-weight: 600;
+}
+
+.places-hero {
+	grid-column: 1 / -1;
+}
+
+.places-hero img {
+	height: 40vw;
+	min-height: 12rem;
+	max-height: 33rem;
+}
+
+.tips .places-hero {
+	margin-bottom: 1rem;
+}
+
+/* study places: legend and place cards */
+.legend {
+	grid-column: 1 / -1;
+	padding: 1.25rem 1.5rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+}
+
+.legend h2 {
+	margin: 0 0 0.75rem 0;
+	color: var(--orange);
+	font-family: var(--font-heading);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
+.legend ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem 1.25rem;
+	margin: 0 0 0.75rem 0;
+	padding: 0;
+	list-style: none;
+}
+
+.legend li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--text);
+	font-size: 0.8rem;
+	line-height: 1.5;
+}
+
+.legend p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.8rem;
+	line-height: 1.5;
+}
+
+.legend a {
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+.legend a:link,
+.legend a:visited {
+	color: var(--navy);
+}
+
+.fac {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-style: solid;
+	border-width: 0.0625rem;
+	border-radius: 0.4rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	line-height: 1;
+	cursor: default;
+}
+
+.fac.wifi {
+	border-color: #bfdbfe;
+	background-color: #dbeafe;
+	color: #1d4ed8;
+}
+
+.fac.power {
+	border-color: #fde68a;
+	background-color: #fef3c7;
+	color: #b45309;
+}
+
+.fac.seating {
+	border-color: #ddd6fe;
+	background-color: #ede9fe;
+	color: #6d28d9;
+}
+
+.fac.food {
+	border-color: #fecdd3;
+	background-color: #ffe4e6;
+	color: #be123c;
+}
+
+.fac.quiet {
+	border-color: #bbf7d0;
+	background-color: #dcfce7;
+	color: #15803d;
+}
+
+.place-card {
+	grid-column: span 4;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 1.5rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+.place-card figure {
+	padding: 0;
+	border-style: none;
+	border-radius: 0;
+}
+
+.place-card figure img {
+	height: 15rem;
+	border-radius: 0;
+}
+
+.place-card h2 {
+	margin: 1.5rem 1.5rem 0.3rem 1.5rem;
+	color: var(--text);
+	font-family: var(--font-heading);
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.6;
+}
+
+.place-card address {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0 1.5rem 0.6rem 1.5rem;
+	color: var(--muted);
+	font-size: 0.9rem;
+	font-style: normal;
+	line-height: 1.5;
+}
+
+.place-card address svg {
+	flex-shrink: 0;
+	color: var(--navy);
+}
+
+.place-card p {
+	margin: 0 1.5rem;
+	color: var(--muted);
+	font-size: 1rem;
+	line-height: 1.625;
+}
+
+.facility-list {
+	display: flex;
+	gap: 0.4rem;
+	margin: auto 1.5rem 0 1.5rem;
+	padding: 1rem 0 0 0;
+	list-style: none;
+}
+
+/* facilities page cards */
+.facility-card h3 {
+	margin: 1rem 0 0.4rem 0;
+	font-size: 1.1rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.facility-card p {
+	font-size: 0.95rem;
+	line-height: 1.6;
+}
+
+.facility-card .fac {
+	width: 2.25rem;
+	height: 2.25rem;
+	font-size: 0.85rem;
+}
+
+/* study tips cards, 4 per row */
+.tip {
+	grid-column: span 3;
+}
+
+.tip .icon,
+.about-card .icon {
+	width: 2.75rem;
+	height: 2.75rem;
+}
+
+.tip h3 {
+	margin-top: 0.9rem;
+	font-size: 1.1rem;
+	line-height: 1.5;
+}
+
+.tip p {
+	font-size: 0.875rem;
+	line-height: 1.45;
+}
+
+/* contact page about cards */
+.about-card h3 {
+	margin: 1rem 0 0.5rem 0;
+	font-size: 1.15rem;
+	line-height: 1.5;
+}
+
+.about-card p {
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+/* section with a heading and a form or cards (facilities, reviews, contact) */
+.guidance {
+	row-gap: var(--gutter);
+	padding: 3rem var(--side) 7rem var(--side);
+}
+
+.guidance h2 {
+	margin-bottom: 0.15rem;
+}
+
+.places.facilities + .guidance {
+	padding-top: 2rem;
+}
+
+/* student reviews */
+.review {
+	grid-column: span 4;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+}
+
+.review-top {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.score {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin: 0;
+	color: var(--text);
+	font-size: 1.05rem;
+	font-weight: 500;
+}
+
+.stars-display {
+	display: flex;
+	gap: 0.1rem;
+}
+
+.review svg.on {
+	fill: var(--orange);
+	stroke: var(--orange);
+}
+
+.review svg.off {
+	fill: none;
+	stroke: var(--orange);
+}
+
+.badge {
+	padding: 0.35rem 0.85rem;
+	border-radius: 2rem;
+	background-color: var(--icon-bg);
+	color: var(--navy);
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.review blockquote {
+	flex: 1;
+	margin: 1.3rem 0 1.5rem 0;
+	color: var(--muted);
+	font-size: 1.25rem;
+	line-height: 1.6;
+	text-indent: -0.35rem;
+}
+
+.review address {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0 0 0.9rem 0;
+	color: var(--text);
+	font-size: 1.05rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+.review address svg {
+	flex-shrink: 0;
+	color: var(--navy);
+}
+
+.review footer {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	margin: 0;
+	padding: 1rem 0 0 0;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem 0 0 0;
+	background-color: transparent;
+}
+
+.review footer p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 1.05rem;
+	line-height: 1.5;
+}
+
+/* review form */
+.review-form {
+	grid-column: 1 / 9;
+	padding: 2.5rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+}
+
+.rating {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	min-width: 0;
+	margin: 0 0 1.75rem 0;
+	padding: 0 0 1.75rem 0;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0 0 0.0625rem 0;
+}
+
+.rating legend {
+	width: 100%;
+	margin-bottom: 0.6rem;
+	padding: 0;
+	color: var(--text);
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.stars {
+	display: inline-flex;
+	flex-direction: row-reverse;
+	margin-left: -0.3rem;
+}
+
+.stars label {
+	padding: 0 0.3rem;
+	cursor: pointer;
+}
+
+.stars svg {
+	display: block;
+	fill: none;
+	stroke: var(--muted);
+}
+
+.stars input:checked ~ label svg,
+.stars label:hover svg,
+.stars label:hover ~ label svg {
+	fill: var(--orange);
+	stroke: var(--orange);
+}
+
+.stars input:focus + label {
+	outline: 0.125rem solid var(--orange);
+	outline-offset: 0.125rem;
+}
+
+.rating-hint {
+	margin-left: 1rem;
+	color: var(--text);
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+/* form fields */
+.field {
+	display: block;
+	min-width: 0;
+	color: var(--text);
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+.field input,
+.field textarea {
+	display: block;
+	width: 100%;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+	color: var(--text);
+	font-family: var(--font-body);
+	font-weight: 400;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+	color: #94a3b8;
+}
+
+.field input:focus,
+.field textarea:focus {
+	border-color: var(--navy);
+	outline: none;
+}
+
+.review-form .field {
+	font-size: 1rem;
+}
+
+.review-form .field input,
+.review-form .field textarea {
+	margin-top: 0.6rem;
+	padding: 0.9rem 1.15rem;
+	font-size: 1.1rem;
+}
+
+.review-form .field input {
+	height: 3.6rem;
+}
+
+.review-form .field textarea {
+	min-height: 12rem;
+	resize: vertical;
+}
+
+.review-form .field-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--gutter);
+	margin-top: 2.5rem;
+}
+
+.review-form .submit-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.25rem;
+	margin-top: 1.9rem;
+}
+
+.review-form .submit-row input {
+	height: 3.75rem;
+	padding: 0 1.8rem 0 3.4rem;
+	border-radius: 0.8rem;
+	background-position: 1.5rem center;
+	background-size: 1.2rem;
+	font-size: 1.2rem;
+}
+
+.review-form .submit-row span {
+	color: var(--muted);
+	font-size: 0.95rem;
+}
+
+/* contact form */
+.contact-form {
+	grid-column: 1 / 7;
+	padding: 1.1rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+}
+
+.contact-form fieldset {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.contact-form .field {
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.contact-form .field input,
+.contact-form .field textarea {
+	margin-top: 0.3rem;
+	padding: 0.6rem 0.9rem;
+	font-size: 0.85rem;
+}
+
+.contact-form .field input {
+	height: 2.6rem;
+}
+
+.contact-form .field textarea {
+	min-height: 10rem;
+	resize: vertical;
+}
+
+.contact-form .field-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.contact-form .field-row.name-row {
+	grid-template-columns: 0.55fr 1fr 1fr;
+}
+
+.contact-form .submit-row {
+	display: flex;
+	margin-top: 1.4rem;
+}
+
+.contact-form .submit-row input {
+	height: 2.6rem;
+	padding: 0 1.4rem 0 2.8rem;
+	border-radius: 0.6rem;
+	background-position: 1.1rem center;
+	background-size: 1rem;
+	font-size: 0.9rem;
+}
+
+.required {
+	color: var(--red);
+}
+
+/* submit buttons (both forms) */
+.submit-row input {
+	border-style: none;
+	background-color: var(--navy);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m22 2-7 20-4-9-9-4z'/%3E%3Cpath d='M22 2 11 13'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	color: #ffffff;
+	font-family: var(--font-body);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.submit-row input:hover {
+	background-color: var(--text);
+}
+
+/* table rows, only used on a page that has a table */
+tbody tr:nth-child(even) {
+	background-color: #cff;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+/* footer */
+footer {
+	padding: 3rem var(--side) 2.4rem var(--side);
+	background-color: var(--bg-footer);
+}
+
+.footer-top {
+	align-items: start;
+	row-gap: 2rem;
+	padding-bottom: 2.6rem;
+}
+
+.footer-top article {
+	grid-column: 1 / 7;
+}
+
+.footer-top nav {
+	grid-column: 9 / 13;
+}
+
+footer .logo {
+	gap: 0.6rem;
+	font-size: 1.1rem;
+}
+
+footer .logo-icon {
+	padding: 0.3rem;
+	border-radius: 0.5rem;
+}
+
+.footer-top p {
+	max-width: 21rem;
+	margin: 0.85rem 0 0 0;
+	color: var(--muted);
+	font-size: 0.9rem;
+	line-height: 1.4;
+}
+
+footer h2 {
+	margin: 0 0 1.1rem 0;
+	color: var(--text);
+	font-family: var(--font-heading);
+	font-size: 0.9rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+footer nav > ul {
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+footer nav a {
+	padding: 0;
+	border-radius: 0;
+	font-size: 0.9rem;
+	line-height: 1.4;
+}
+
+footer nav a:hover {
+	background-color: transparent;
+	color: var(--navy);
+}
+
+.footer-bottom {
+	padding-top: 1.5rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem 0 0 0;
+}
+
+.footer-bottom p {
+	grid-column: 1 / -1;
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.95rem;
+	line-height: 1.6;
+}
+
+/* link that is being clicked (keep this under the hover rules) */
+nav a:active,
+.logo:active,
+.button:active,
+.legend a:active {
+	color: var(--orange);
+}
+
+footer nav a:active {
+	color: var(--orange);
+}
+
+/* cookies message */
+.cookies {
+	position: fixed;
+	right: 1.5rem;
+	bottom: 1.5rem;
+	z-index: 9999;
+	max-width: 22rem;
+	padding: 1rem 1.25rem;
+	border-style: solid;
+	border-color: var(--line);
+	border-width: 0.0625rem;
+	border-radius: 0.8rem;
+	background-color: #ffffff;
+	box-shadow: 0 0.25rem 1.25rem rgba(30, 58, 138, 0.12);
+}
+
+.cookies p {
+	margin: 0 0 0.5rem 0;
+	color: var(--muted);
+	font-size: 0.9rem;
+	line-height: 1.5;
+}
+
+.cookies label {
+	float: right;
+	padding: 0.35rem 1.1rem;
+	border-radius: 0.6rem;
+	background-color: var(--navy);
+	color: #ffffff;
+	font-size: 0.9rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.cookies::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#cookie-ok:checked + .cookies {
+	display: none;
+}
+
+/* pc (wider than 768px) */
+@media (min-width: 48.0625em) {
+	.hero p {
+		font-size: 1.3rem;
+	}
+}
+
+/* tablet and smaller laptops */
+@media (max-width: 64em) {
+	:root {
+		--space: 3.5rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	.hero article,
+	.hero figure {
+		grid-column: 1 / -1;
+		padding-right: 0;
+	}
+
+	.card,
+	.place-card,
+	.review {
+		grid-column: span 6;
+	}
+
+	.tip {
+		grid-column: span 6;
+	}
+
+	.review-form,
+	.contact-form {
+		grid-column: 1 / -1;
+	}
+
+	.footer-top nav {
+		grid-column: 8 / 13;
+	}
+}
+
+/* smartphone (768px and smaller) */
+@media (max-width: 48em) {
+	:root {
+		--space: 2.5rem;
+	}
+
+	h1 {
+		font-size: 2.2rem;
+	}
+
+	.places h1,
+	.explore h2,
+	.steps h2,
+	.guidance h2 {
+		font-size: 1.8rem;
+	}
+
+	.logo {
+		font-size: 1.2rem;
+	}
+
+	.menu-button {
+		display: block;
+	}
+
+	header nav {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		z-index: 10;
+		display: none;
+		padding: 0.75rem 1.5rem 1rem 1.5rem;
+		background-color: var(--bg);
+		border-style: solid;
+		border-color: var(--line);
+		border-width: 0 0 0.0625rem 0;
+	}
+
+	.menu-toggle:checked ~ nav {
+		display: block;
+	}
+
+	header nav > ul {
+		flex-direction: column;
+	}
+
+	header nav a {
+		padding: 0.7rem 1rem;
+		font-size: 1rem;
+	}
+
+	.places-hero img {
+		height: 12rem;
+	}
+
+	.card,
+	.tip,
+	.place-card,
+	.review,
+	.review-form,
+	.contact-form,
+	.footer-top article,
+	.footer-top nav {
+		grid-column: 1 / -1;
+	}
+
+	.review {
+		padding: 1.5rem;
+	}
+
+	.review-form {
+		padding: 1.5rem;
+	}
+
+	.review-form .field-row {
+		grid-template-columns: 1fr;
+		margin-top: 1.5rem;
+	}
+
+	.contact-form .field-row,
+	.contact-form .field-row.name-row {
+		grid-template-columns: 1fr;
+	}
+
+	.cookies {
+		right: 1rem;
+		bottom: 1rem;
+		left: 1rem;
+		max-width: none;
+	}
+}
