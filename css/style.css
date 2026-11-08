@@ -277,7 +277,7 @@ figure img {
 	letter-spacing: -0.02em;
 }
 
-/* cards (home page, then the small changes per page) */
+/* cards */
 .card {
 	grid-column: span 4;
 	padding: 1.5rem;
@@ -413,7 +413,7 @@ figure img {
 	margin-bottom: 1rem;
 }
 
-/* study places: legend and place cards */
+/* study places:*/
 .legend {
 	grid-column: 1 / -1;
 	padding: 1.25rem 1.5rem;
@@ -632,7 +632,7 @@ figure img {
 	line-height: 1.6;
 }
 
-/* section with a heading and a form or cards (facilities, reviews, contact) */
+
 .guidance {
 	row-gap: var(--gutter);
 	padding: 3rem var(--side) 7rem var(--side);
@@ -713,16 +713,17 @@ figure img {
 	text-indent: -0.35rem;
 }
 
+
 .review address {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 	margin: 0 0 0.9rem 0;
-	color: var(--text);
-	font-size: 1.05rem;
+	color: var(--navy);
+	font-size: 1.5rem;
 	font-style: normal;
-	font-weight: 500;
-	line-height: 1.5;
+	font-weight: 700;
+	line-height: 1.3;
 }
 
 .review address svg {
@@ -968,7 +969,7 @@ figure img {
 	color: var(--red);
 }
 
-/* submit buttons (both forms) */
+/* submit buttons*/
 .submit-row input {
 	border-style: none;
 	background-color: var(--navy);
@@ -1072,7 +1073,7 @@ footer nav a:hover {
 	line-height: 1.6;
 }
 
-/* link that is being clicked (keep this under the hover rules) */
+
 nav a:active,
 .logo:active,
 .button:active,
